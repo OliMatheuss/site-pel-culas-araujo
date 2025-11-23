@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de películas - Películas Araujo">
+    <title>Catálogo - Películas Araujo</title>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/catalogo.css">
+</head>
+<body>
+    <!-- ========================================================================
+         NAVBAR
+         ======================================================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo">🎬 Películas Araujo</h1>
+            </div>
+            
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogo.html" class="active">Catálogo</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu - Mobile -->
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================================================================
+         PAGE HEADER
+         ======================================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Catálogo de Películas</h1>
+            <p>Conheça nossa seleção de películas de alta qualidade</p>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         FILTROS
+         ======================================================================== -->
+    <section class="filtros-section">
+        <div class="container">
+            <div class="filtros">
+                <button class="filtro-btn active" data-filtro="todas">Todas</button>
+                <button class="filtro-btn" data-filtro="automotivo">Automotivas</button>
+                <button class="filtro-btn" data-filtro="predial">Prediais</button>
+                <button class="filtro-btn" data-filtro="premium">Premium</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         CATÁLOGO DE PRODUTOS
+         ======================================================================== -->
+    <section class="catalogo">
+        <div class="container">
+            <div class="produtos-grid">
+                <!-- Produto 1 -->
+                <div class="produto-card" data-categoria="automotivo">
+                    <div class="produto-imagem">
+                        <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=300&h=200&fit=crop" alt="Insulfilm 20%">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Insulfilm 20%</h3>
+                        <p class="categoria">Películas Automotivas</p>
+                        <p class="descricao">Película com 20% de transparência. Proteção UV máxima com excelente visibilidade interna.</p>
+                        <div class="especificacoes">
+                            <span>✓ Proteção UV: 99%</span>
+                            <span>✓ Rejeição térmica: 80%</span>
+                        </div>
+                        <a href="contato.html" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="produto-card" data-categoria="automotivo">
+                    <div class="produto-imagem">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c3febdc3d?w=300&h=200&fit=crop" alt="Insulfilm 35%">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Insulfilm 35%</h3>
+                        <p class="categoria">Películas Automotivas</p>
+                        <p class="descricao">Película com 35% de transparência. Equilíbrio perfeito entre proteção e visibilidade.</p>
+                        <div class="especificacoes">
+                            <span>✓ Proteção UV: 98%</span>
+                            <span>✓ Rejeição térmica: 75%</span>
+                        </div>
+                        <a href="contato.html" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="produto-card" data-categoria="premium">
+                    <div class="produto-imagem">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" alt="Insulfilm Premium G">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Insulfilm Premium G</h3>
+                        <p class="categoria">Películas Premium</p>
+                        <p class="descricao">Película de última geração com tecnologia nano-cerâmica. Máxima proteção e durabilidade.</p>
+                        <div class="especificacoes">
+                            <span>✓ Proteção UV: 99.9%</span>
+                            <span>✓ Rejeição térmica: 90%</span>
+                        </div>
+                        <a href="contato.html" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="produto-card" data-categoria="predial">
+                    <div class="produto-imagem">
+                        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=300&h=200&fit=crop" alt="Película Residencial RT30">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Película Residencial RT30</h3>
+                        <p class="categoria">Películas Prediais</p>
+                        <p class="descricao">Ideal para residências. Reduz calor, proporciona privacidade e economiza energia.</p>
+                        <div class="especificacoes">
+                            <span>✓ Rejeição térmica: 70%</span>
+                            <span>✓ Privacidade: Moderada</span>
+                        </div>
+                        <a href="contato.html" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="produto-card" data-categoria="predial">
+                    <div class="produto-imagem">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop" alt="Película Comercial RT50">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Película Comercial RT50</h3>
+                        <p class="categoria">Películas Prediais</p>
+                        <p class="descricao">Perfeita para escritórios e comércios. Privacidade total com rejeição térmica superior.</p>
+                        <div class="especificacoes">
+                            <span>✓ Rejeição térmica: 85%</span>
+                            <span>✓ Privacidade: Total</span>
+                        </div>
+                        <a href="contato.html" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="produto-card" data-categoria="premium">
+                    <div class="produto-imagem">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=300&h=200&fit=crop" alt="Película Smart Tint">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Película Smart Tint</h3>
+                        <p class="categoria">Películas Premium</p>
+                        <p class="descricao">Película inteligente com tecnologia de vidro. Muda de tonalidade conforme a luz solar.</p>
+                        <div class="especificacoes">
+                            <span>✓ Rejeição térmica: 95%</span>
+                            <span>✓ Tecnologia: Smart Glass</span>
+                        </div>
+                        <a href="contato.html" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         CTA
+         ======================================================================== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Não encontrou o que procura?</h2>
+            <p>Temos outras opções! Entre em contato para mais informações.</p>
+            <a href="contato.html" class="btn btn-large">Fale Conosco</a>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         FOOTER
+         ======================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Películas Araujo</h4>
+                    <p>Especialista em películas de qualidade para veículos e imóveis.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="portfolio.html">Portfólio</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📧 Email: contato@peliculasaraujo.com</p>
+                    <p>📱 Telefone: (11) 9999-9999</p>
+                    <p>📍 São Paulo, SP</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Películas Araujo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================
+         SCRIPTS
+         ======================================================================== -->
+    <script src="assets/js/menu-mobile.js"></script>
+    <script src="assets/js/catalogo.js"></script>
+
+</body>
+</html>

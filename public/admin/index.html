@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin - Películas Araujo">
+    <title>Admin Dashboard - Películas Araujo</title>
+    
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+    <!-- ========================================================================
+         SIDEBAR - Navegação Lateral
+         ======================================================================== -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2 class="sidebar-title">🎬 Películas</h2>
+            <p class="sidebar-subtitle">Admin Dashboard</p>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                📊 Dashboard
+            </a>
+            <a href="#orcamentos" class="nav-item" data-section="orcamentos">
+                📋 Orçamentos
+            </a>
+            <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+                ⚙️ Configurações
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button id="btnLogout" class="btn-logout">🚪 Sair</button>
+        </div>
+    </aside>
+
+    <!-- ========================================================================
+         MAIN CONTENT
+         ======================================================================== -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="btn-menu-toggle">☰ Menu</button>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <span class="user-info">👤 Admin</span>
+                <button class="btn-theme-toggle">🌙</button>
+            </div>
+        </header>
+
+        <!-- ====================================================================
+             SEÇÃO: DASHBOARD
+             ==================================================================== -->
+        <section id="dashboard" class="section-content active">
+            <div class="section-header">
+                <h2>Dashboard</h2>
+                <p>Resumo de atividades e estatísticas</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-info">
+                        <h3 id="totalOrcamentos">0</h3>
+                        <p>Total de Orçamentos</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-info">
+                        <h3 id="orcamentosAbertos">0</h3>
+                        <p>Em Aberto</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <h3 id="orcamentosAprovados">0</h3>
+                        <p>Aprovados</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">❌</div>
+                    <div class="stat-info">
+                        <h3 id="orcamentosRejeitados">0</h3>
+                        <p>Rejeitados</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Últimos Orçamentos -->
+            <div class="section-box">
+                <h3>Últimos Orçamentos</h3>
+                <div id="ultimosOrcamentos" class="orcamentos-list">
+                    <p class="empty-state">Nenhum orçamento registrado</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             SEÇÃO: ORÇAMENTOS
+             ==================================================================== -->
+        <section id="orcamentos" class="section-content">
+            <div class="section-header">
+                <h2>Gerenciar Orçamentos</h2>
+                <p>Visualize, edite e gerencie todos os orçamentos</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros-section">
+                <input type="text" id="filtroCliente" class="input-filtro" placeholder="🔍 Buscar por cliente...">
+                
+                <select id="filtroStatus" class="select-filtro">
+                    <option value="">Todos os Status</option>
+                    <option value="pendente">⏳ Pendente</option>
+                    <option value="aprovado">✅ Aprovado</option>
+                    <option value="rejeitado">❌ Rejeitado</option>
+                </select>
+                
+                <button id="btnExportar" class="btn btn-secondary">📥 Exportar</button>
+            </div>
+
+            <!-- Tabela de Orçamentos -->
+            <div class="section-box">
+                <div id="orcamentosContainer" class="orcamentos-table-wrapper">
+                    <table class="orcamentos-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Telefone</th>
+                                <th>Email</th>
+                                <th>Serviço</th>
+                                <th>Status</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaOrcamentos">
+                            <tr class="empty-row">
+                                <td colspan="8" class="empty-state">Nenhum orçamento encontrado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             SEÇÃO: CONFIGURAÇÕES
+             ==================================================================== -->
+        <section id="configuracoes" class="section-content">
+            <div class="section-header">
+                <h2>Configurações</h2>
+                <p>Gerencie configurações do sistema</p>
+            </div>
+
+            <!-- Configurações -->
+            <div class="section-box">
+                <h3>Configurações do Sistema</h3>
+                
+                <div class="config-group">
+                    <label for="emailAdmin">Email Admin</label>
+                    <input type="email" id="emailAdmin" class="config-input" placeholder="admin@peliculasaraujo.com">
+                </div>
+                
+                <div class="config-group">
+                    <label for="telefonePrincipal">Telefone Principal</label>
+                    <input type="tel" id="telefonePrincipal" class="config-input" placeholder="(11) 9999-9999">
+                </div>
+                
+                <div class="config-group">
+                    <label for="enderecoEmpresa">Endereço da Empresa</label>
+                    <input type="text" id="enderecoEmpresa" class="config-input" placeholder="São Paulo, SP">
+                </div>
+                
+                <div class="config-group">
+                    <label>
+                        <input type="checkbox" id="notificacaoEmail"> Receber notificações por email
+                    </label>
+                </div>
+                
+                <button id="btnSalvarConfig" class="btn btn-primary">💾 Salvar Configurações</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================================================
+         MODAL - Detalhes do Orçamento
+         ======================================================================== -->
+    <div id="modalOrcamento" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            
+            <h2 id="modalTitulo">Detalhes do Orçamento</h2>
+            
+            <div class="modal-body">
+                <div class="modal-field">
+                    <label>ID:</label>
+                    <span id="detalhesId">-</span>
+                </div>
+                
+                <div class="modal-field">
+                    <label>Cliente:</label>
+                    <span id="detalhesCliente">-</span>
+                </div>
+                
+                <div class="modal-field">
+                    <label>Telefone:</label>
+                    <span id="detalhesTelefone">-</span>
+                </div>
+                
+                <div class="modal-field">
+                    <label>Email:</label>
+                    <span id="detalhesEmail">-</span>
+                </div>
+                
+                <div class="modal-field">
+                    <label>Tipo de Serviço:</label>
+                    <span id="detalhesTipo">-</span>
+                </div>
+                
+                <div class="modal-field">
+                    <label>Mensagem:</label>
+                    <p id="detalhesMensagem" class="mensagem-text">-</p>
+                </div>
+                
+                <div class="modal-field">
+                    <label>Data:</label>
+                    <span id="detalhesData">-</span>
+                </div>
+                
+                <div class="modal-field">
+                    <label>Status:</label>
+                    <select id="detalhesStatus" class="status-select">
+                        <option value="pendente">⏳ Pendente</option>
+                        <option value="aprovado">✅ Aprovado</option>
+                        <option value="rejeitado">❌ Rejeitado</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button id="btnAtualizarStatus" class="btn btn-primary">🔄 Atualizar Status</button>
+                <button id="btnEnviarEmail" class="btn btn-secondary">📧 Enviar Email</button>
+                <button id="btnExcluir" class="btn btn-danger">🗑️ Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================
+         SCRIPTS
+         ======================================================================== -->
+    <script src="../assets/js/admin.js"></script>
+
+</body>
+</html>

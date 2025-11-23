@@ -1,0 +1,479 @@
+/**
+ * =====================================================================
+ * SOBRE.CSS
+ * =====================================================================
+ * Estilos específicos para a página "Sobre"
+ * Inclui: história, MVV, diferenciais, equipe, certificações
+ */
+
+/* =====================================================================
+   HISTÓRIA
+   ===================================================================== */
+
+.historia {
+    padding: var(--spacing-lg) 0;
+    background-color: white;
+}
+
+/**
+ * .historia-grid
+ * Grid layout para texto e estatísticas
+ * Responsivo: 1 coluna (mobile) → 2 colunas (desktop)
+ */
+.historia-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+    .historia-grid {
+        grid-template-columns: 1.2fr 1fr;
+        gap: var(--spacing-xl);
+    }
+}
+
+/**
+ * .historia-texto
+ * Texto sobre a história da empresa
+ */
+.historia-texto h2 {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.historia-texto p {
+    color: var(--color-text);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem;
+}
+
+/**
+ * .historia-stats
+ * Grid de estatísticas (15+ anos, 5000+ clientes, etc)
+ * Responsivo: 2x2 (mobile) ou 2x2 (desktop)
+ */
+.historia-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+/**
+ * .stat-item
+ * Card individual de estatística
+ * - Background gradiente
+ * - Texto centralizado
+ * - Padding amplo
+ */
+.stat-item {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2980b9 100%);
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-numero {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+/* =====================================================================
+   MISSÃO, VISÃO, VALORES (MVV)
+   ===================================================================== */
+
+.mvv {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-light);
+}
+
+.mvv h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2rem;
+}
+
+/**
+ * .mvv-grid
+ * Grid de 3 cards (Missão, Visão, Valores)
+ * Responsivo: 1 coluna (mobile) → 3 colunas (desktop)
+ */
+.mvv-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 600px) {
+    .mvv-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .mvv-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/**
+ * .mvv-card
+ * Card individual de MVV
+ * - Background branco
+ * - Sombra suave
+ * - Ícone no topo
+ */
+.mvv-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--color-primary);
+}
+
+.mvv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mvv-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.mvv-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.mvv-card p {
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* =====================================================================
+   DIFERENCIAIS
+   ===================================================================== */
+
+.diferenciais {
+    padding: var(--spacing-lg) 0;
+    background-color: white;
+}
+
+.diferenciais h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2rem;
+}
+
+/**
+ * .diferenciais-grid
+ * Grid de 6 cards de diferenciais
+ * Responsivo: 1 → 2 → 3 colunas
+ */
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+@media (min-width: 600px) {
+    .diferenciais-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (min-width: 768px) {
+    .diferenciais-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+/**
+ * .diferencial-card
+ * Card de diferencial
+ * - Ícone com checkmark
+ * - Título e descrição
+ */
+.diferencial-card {
+    background: var(--color-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.diferencial-card:hover {
+    background: white;
+    box-shadow: var(--shadow-md);
+    transform: translateX(5px);
+}
+
+.diferencial-icone {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.diferencial-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.diferencial-card p {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* =====================================================================
+   EQUIPE
+   ===================================================================== */
+
+.equipe {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-light);
+}
+
+.equipe h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.equipe-intro {
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.05rem;
+}
+
+/**
+ * .equipe-grid
+ * Grid de cards da equipe
+ * Responsivo: 1 → 2 → 4 colunas
+ */
+.equipe-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 600px) {
+    .equipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .equipe-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/**
+ * .equipe-card
+ * Card de membro da equipe
+ * - Avatar/emoji grande
+ * - Nome, cargo, bio
+ */
+.equipe-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.equipe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.equipe-avatar {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.equipe-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.equipe-card .cargo {
+    color: var(--color-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.equipe-card .bio {
+    color: var(--color-text);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* =====================================================================
+   CERTIFICAÇÕES
+   ===================================================================== */
+
+.certificacoes {
+    padding: var(--spacing-lg) 0;
+    background-color: white;
+}
+
+.certificacoes h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2rem;
+}
+
+/**
+ * .certificacoes-grid
+ * Grid de certificações
+ * Responsivo: 2 → 4 colunas
+ */
+.certificacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+    .certificacoes-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/**
+ * .cert-item
+ * Item de certificação
+ * - Badge grande
+ * - Título e descrição
+ */
+.cert-item {
+    background: var(--color-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--color-primary);
+}
+
+.cert-item:hover {
+    transform: scale(1.05);
+    background: white;
+    box-shadow: var(--shadow-md);
+}
+
+.cert-badge {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.cert-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.cert-item p {
+    color: var(--color-text);
+    font-size: 0.85rem;
+}
+
+/* =====================================================================
+   RESPONSIVIDADE
+   ===================================================================== */
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+    .historia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mvv h2,
+    .diferenciais h2,
+    .equipe h2,
+    .certificacoes h2 {
+        font-size: 1.5rem;
+    }
+
+    .stat-numero {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    .historia-texto h2 {
+        font-size: 1.5rem;
+    }
+
+    .historia-texto p {
+        font-size: 0.95rem;
+    }
+
+    .historia-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .mvv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diferenciais-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .equipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificacoes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .equipe-avatar {
+        font-size: 3rem;
+    }
+}

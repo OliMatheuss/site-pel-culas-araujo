@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contato - Películas Araujo">
+    <title>Contato - Películas Araujo</title>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/contato.css">
+</head>
+<body>
+    <!-- ========================================================================
+         NAVBAR
+         ======================================================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo">🎬 Películas Araujo</h1>
+            </div>
+            
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu - Mobile -->
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================================================================
+         PAGE HEADER
+         ======================================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p>Dúvidas? Solicite um orçamento gratuito!</p>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTEÚDO PRINCIPAL
+         ======================================================================== -->
+    <section class="contato-content">
+        <div class="container">
+            <div class="contato-grid">
+                <!-- FORMULÁRIO -->
+                <div class="formulario-container">
+                    <h2>Solicitar Orçamento</h2>
+                    <form id="orcamentoForm" class="formulario">
+                        <!-- Campo: Nome -->
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+
+                        <!-- Campo: Telefone -->
+                        <div class="form-group">
+                            <label for="telefone">Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(11) 9999-9999" required>
+                        </div>
+
+                        <!-- Campo: Email -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="seu.email@example.com">
+                        </div>
+
+                        <!-- Campo: Tipo de Serviço -->
+                        <div class="form-group">
+                            <label for="tipo">Tipo de Serviço *</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">-- Selecione --</option>
+                                <option value="automotivo">Películas Automotivas</option>
+                                <option value="predial">Películas Prediais</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo: Mensagem -->
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                        </div>
+
+                        <!-- Botão de Envio -->
+                        <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
+                    </form>
+                    <div id="mensagemFeedback"></div>
+                </div>
+
+                <!-- INFORMAÇÕES DE CONTATO -->
+                <div class="informacoes-container">
+                    <h2>Nossas Informações</h2>
+                    
+                    <div class="info-item">
+                        <h4>📍 Endereço</h4>
+                        <p>São Paulo, SP - Brasil</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>📧 Email</h4>
+                        <p><a href="mailto:contato@peliculasaraujo.com">contato@peliculasaraujo.com</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>📱 Telefone</h4>
+                        <p><a href="tel:+5511999999999">(11) 9999-9999</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>🕒 Horário de Atendimento</h4>
+                        <p>Segunda a Sexta: 8h - 18h</p>
+                        <p>Sábado: 8h - 13h</p>
+                        <p>Domingo: Fechado</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>💡 Diferenciais</h4>
+                        <ul>
+                            <li>✓ Orçamento em 24h</li>
+                            <li>✓ Instalação profissional</li>
+                            <li>✓ Garantia de qualidade</li>
+                            <li>✓ Melhor preço</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         MAPA - Imagem da Localização
+         ======================================================================== -->
+    <section class="mapa-section">
+        <div class="container">
+            <h2>Localização</h2>
+            <p>Visite-nos em São Paulo para conhecer nossos serviços pessoalmente</p>
+            <div class="mapa-placeholder">
+                <img src="https://images.unsplash.com/photo-1570129477492-45201d27a47d?w=800&h=400&fit=crop" alt="São Paulo - Localização Películas Araujo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         CTA
+         ======================================================================== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Pronto para transformar seu veículo?</h2>
+            <p>Agende sua avaliação gratuita agora</p>
+            <a href="#orcamentoForm" class="btn btn-large">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         FOOTER
+         ======================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Películas Araujo</h4>
+                    <p>Especialista em películas de qualidade para veículos e imóveis.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="portfolio.html">Portfólio</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📧 Email: contato@peliculasaraujo.com</p>
+                    <p>📱 Telefone: (11) 9999-9999</p>
+                    <p>📍 São Paulo, SP</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Películas Araujo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================
+         SCRIPTS
+         ======================================================================== -->
+    <script src="assets/js/menu-mobile.js"></script>
+    <script src="assets/js/contato.js"></script>
+
+</body>
+</html>

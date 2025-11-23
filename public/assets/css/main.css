@@ -4,53 +4,499 @@
  * Este arquivo contém os estilos globais e componentes base da aplicação.
  * Utiliza variáveis CSS (Custom Properties) para fácil customização de temas.
  * 
- * Cores e Temas:
- * - --bg: Cor de fundo principal (padrão: branco)
- * - --fg: Cor do texto principal (padrão: cinza escuro)
+ * Estrutura:
+ * 1. Variáveis CSS (cores, tipografia)
+ * 2. Reset/Normalize
+ * 3. Componentes globais
+ * 4. Layouts
  * 
  * @author Equipe Películas Araujo
  * @version 1.0.0
  * @date 2025
  */
 
-/**
- * Variáveis CSS (Custom Properties)
- * Permitem mudança rápida de tema sem alterar o código
- * Todos os elementos herdam essas cores a menos que sobrescrito
- */
+/* ============================================================================
+   1. VARIÁVEIS CSS (Custom Properties)
+   Permitem mudança rápida de tema sem alterar o código
+   ============================================================================ */
+
 :root {
-    --bg: #ffffff;      /* Cor de fundo da página */
-    --fg: #222;         /* Cor do texto */
+    /* Cores Principais */
+    --primary: #1a73e8;       /* Azul principal */
+    --secondary: #4285f4;     /* Azul secundário */
+    --success: #34a853;       /* Verde para sucesso */
+    --warning: #fbbc04;       /* Amarelo para aviso */
+    --danger: #ea4335;        /* Vermelho para erro */
+    
+    /* Cores Neutras */
+    --bg-light: #ffffff;      /* Fundo branco */
+    --bg-gray: #f8f9fa;       /* Fundo cinza claro */
+    --text-dark: #202124;     /* Texto escuro */
+    --text-light: #5f6368;    /* Texto claro */
+    --border: #dadce0;        /* Cor de bordas */
+    
+    /* Tipografia */
+    --font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 20px;
+    --line-height: 1.6;
+    
+    /* Espaçamento */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
 }
 
-/**
- * Reset global de box-sizing
- * border-box inclui padding e border no cálculo da largura/altura
- * Facilita o layout e evita transbordamentos inesperados
- */
+/* ============================================================================
+   2. RESET / NORMALIZE
+   Remove estilos padrão do navegador
+   ============================================================================ */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/**
- * Estilos globais do body
- * Define tipografia base, margens e cores padrão
- */
-body {
-    /* Stack de fontes: lista de fallback em caso de fonte não estar disponível */
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    margin: 0;                          /* Remove margem padrão do navegador */
-    color: var(--fg);                   /* Usa cor do texto da variável */
-    background: var(--bg);              /* Usa cor de fundo da variável */
-    padding: 1rem;                      /* Espaço interno do body */
+html {
+    scroll-behavior: smooth;
 }
 
-/**
- * Estilos do header (cabeçalho)
- * Fornece separação visual do conteúdo principal
- */
-header {
-    border-bottom: 1px solid #eee;      /* Linha divisória cinza clara */
-    padding-bottom: 1rem;               /* Espaço interno inferior */
-    margin-bottom: 1rem;                /* Espaço externo inferior */
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+    color: var(--text-dark);
+    background: var(--bg-light);
+}
+
+/* ============================================================================
+   3. COMPONENTES GLOBAIS
+   ============================================================================ */
+
+/* Container - Largura máxima e padding centralizado */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+/* Parágrafos */
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    margin-right: var(--spacing-md);
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    font-size: var(--font-size-large);
+}
+
+/* Link com seta */
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.link-arrow:hover {
+    transform: translateX(5px);
+}
+
+/* ============================================================================
+   4. NAVBAR (Barra de Navegação)
+   ============================================================================ */
+
+.navbar {
+    background: white;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+}
+
+.navbar-brand .logo {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+}
+
+.navbar-menu a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a.active,
+.navbar-menu a:hover {
+    color: var(--primary);
+}
+
+/* Hamburger Menu - Botão mobile */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger animado - Estado ativo */
+.hamburger-menu.ativo span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-menu.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.ativo span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+/* ============================================================================
+   5. HERO SECTION (Seção Principal)
+   ============================================================================ */
+
+.hero {
+    background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 102, 204, 0.7)), 
+                url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=600&fit=crop') center/cover;
+    color: white;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+    font-size: var(--font-size-large);
+    color: rgba(255,255,255,0.9);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ============================================================================
+   6. SEÇÕES DE CONTEÚDO
+   ============================================================================ */
+
+section {
+    padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: var(--font-size-large);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Seção Serviços */
+.servicos {
+    background: var(--bg-gray);
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.servico-card {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.servico-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Seção Destaques */
+.destaques {
+    background: white;
+}
+
+.destaques-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.destaque-item {
+    padding: var(--spacing-lg);
+    border-left: 4px solid var(--primary);
+    background: var(--bg-gray);
+    border-radius: var(--radius-md);
+}
+
+.destaque-item h3 {
+    color: var(--primary);
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.cta p {
+    color: rgba(255,255,255,0.9);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ============================================================================
+   7. FOOTER (Rodapé)
+   ============================================================================ */
+
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-lg);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-section p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: rgba(255,255,255,0.7);
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: var(--spacing-lg);
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+}
+
+/* ============================================================================
+   8. RESPONSIVIDADE (Mobile First)
+   ============================================================================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .navbar-menu {
+        gap: var(--spacing-md);
+        font-size: var(--font-size-small);
+    }
+    
+    .btn {
+        display: block;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    /* Mostrar hamburger menu em tablets */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* Menu mobile - escondido por padrão */
+    .navbar-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Menu aberto */
+    .navbar-menu.aberto {
+        max-height: 300px;
+    }
+    
+    .navbar-menu li {
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .navbar-menu li:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .navbar .container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .navbar-menu {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        width: 100%;
+    }
+    
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
 }

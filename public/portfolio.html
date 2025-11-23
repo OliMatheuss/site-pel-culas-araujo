@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio - Películas Araujo">
+    <title>Portfólio - Películas Araujo</title>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+    <!-- ========================================================================
+         NAVBAR
+         ======================================================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo">🎬 Películas Araujo</h1>
+            </div>
+            
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="portfolio.html" class="active">Portfólio</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu - Mobile -->
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================================================================
+         PAGE HEADER
+         ======================================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nosso Portfólio</h1>
+            <p>Veja os trabalhos que já realizamos com sucesso</p>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         FILTROS
+         ======================================================================== -->
+    <section class="portfolio-filtros">
+        <div class="container">
+            <h2>Filtrar por Categoria</h2>
+            <div class="filtros-container">
+                <button class="filtro-btn active" data-filtro="todos">
+                    Todos os Projetos
+                </button>
+                <button class="filtro-btn" data-filtro="automotivo">
+                    🚗 Automotivas
+                </button>
+                <button class="filtro-btn" data-filtro="predial">
+                    🏢 Prediais
+                </button>
+                <button class="filtro-btn" data-filtro="residencial">
+                    🏠 Residenciais
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         GALERIA DE PROJETOS
+         ======================================================================== -->
+    <section class="portfolio-galeria">
+        <div class="container">
+            <!-- PROJETO 1 -->
+            <div class="portfolio-item" data-categoria="automotivo">
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=400&h=300&fit=crop" alt="Proteção de vidros automotiva">
+                    <div class="portfolio-overlay">
+                        <button class="btn-portfolio-detalhes" data-projeto="1">Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Proteção de Vidros - BMW X5</h3>
+                    <p class="categoria-badge automotivo">Automotiva</p>
+                    <p class="descricao">Aplicação profissional de película de proteção solar em veículo premium</p>
+                </div>
+            </div>
+
+            <!-- PROJETO 2 -->
+            <div class="portfolio-item" data-categoria="automotivo">
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c3febdc3d?w=400&h=300&fit=crop" alt="Insulfilm aplicado">
+                    <div class="portfolio-overlay">
+                        <button class="btn-portfolio-detalhes" data-projeto="2">Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Insulfilm Premium - Audi A4</h3>
+                    <p class="categoria-badge automotivo">Automotiva</p>
+                    <p class="descricao">Instalação de película premium com proteção UV e térmica</p>
+                </div>
+            </div>
+
+            <!-- PROJETO 3 -->
+            <div class="portfolio-item" data-categoria="predial">
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=300&fit=crop" alt="Película predial comercial">
+                    <div class="portfolio-overlay">
+                        <button class="btn-portfolio-detalhes" data-projeto="3">Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Revestimento Comercial - Edifício Office</h3>
+                    <p class="categoria-badge predial">Predial</p>
+                    <p class="descricao">Aplicação em fachada inteira com 5.000+ m² de película</p>
+                </div>
+            </div>
+
+            <!-- PROJETO 4 -->
+            <div class="portfolio-item" data-categoria="residencial">
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop" alt="Película residencial">
+                    <div class="portfolio-overlay">
+                        <button class="btn-portfolio-detalhes" data-projeto="4">Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Proteção de Privacidade - Apartamento Residencial</h3>
+                    <p class="categoria-badge residencial">Residencial</p>
+                    <p class="descricao">Película decorativa com proteção solar em ambiente interiror</p>
+                </div>
+            </div>
+
+            <!-- PROJETO 5 -->
+            <div class="portfolio-item" data-categoria="predial">
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1562621838-a9f54b6a16e9?w=400&h=300&fit=crop" alt="Película predial loja">
+                    <div class="portfolio-overlay">
+                        <button class="btn-portfolio-detalhes" data-projeto="5">Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Branding Comercial - Loja Varejo</h3>
+                    <p class="categoria-badge predial">Predial</p>
+                    <p class="descricao">Adesivos com logo e película de proteção para fachada</p>
+                </div>
+            </div>
+
+            <!-- PROJETO 6 -->
+            <div class="portfolio-item" data-categoria="automotivo">
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Proteção automotiva frota">
+                    <div class="portfolio-overlay">
+                        <button class="btn-portfolio-detalhes" data-projeto="6">Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Frota Corporativa - 12 Veículos</h3>
+                    <p class="categoria-badge automotivo">Automotiva</p>
+                    <p class="descricao">Proteção solar completa em frota de empresa logística</p>
+                </div>
+            </div>
+
+            <!-- PROJETO 7 -->
+            <div class="portfolio-item" data-categoria="residencial">
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop" alt="Película residencial">
+                    <div class="portfolio-overlay">
+                        <button class="btn-portfolio-detalhes" data-projeto="7">Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Proteção Solar - Casa Terrea</h3>
+                    <p class="categoria-badge residencial">Residencial</p>
+                    <p class="descricao">Redução de calor em 40% com película de proteção térmica</p>
+                </div>
+            </div>
+
+            <!-- PROJETO 8 -->
+            <div class="portfolio-item" data-categoria="predial">
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=300&fit=crop" alt="Película espelhada">
+                    <div class="portfolio-overlay">
+                        <button class="btn-portfolio-detalhes" data-projeto="8">Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Película Espelhada - Prédio Executivo</h3>
+                    <p class="categoria-badge predial">Predial</p>
+                    <p class="descricao">Acabamento espelhado com segurança e conforto térmico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         MODAL DE DETALHES
+         ======================================================================== -->
+    <div id="portfolioModal" class="modal-portfolio">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="Projeto">
+                </div>
+                
+                <div class="modal-info">
+                    <h2 id="modalTitulo"></h2>
+                    <p id="modalCategoria" class="categoria-badge"></p>
+                    <p id="modalDescricao"></p>
+                    
+                    <div class="modal-detalhes">
+                        <div class="detalhe-item">
+                            <strong>Área:</strong>
+                            <span id="modalArea">N/A</span>
+                        </div>
+                        <div class="detalhe-item">
+                            <strong>Data:</strong>
+                            <span id="modalData">N/A</span>
+                        </div>
+                        <div class="detalhe-item">
+                            <strong>Tipo Película:</strong>
+                            <span id="modalTipo">N/A</span>
+                        </div>
+                    </div>
+                    
+                    <p id="modalDetalhesCompletos" class="detalhes-completos"></p>
+                    
+                    <a href="contato.html" class="btn btn-primary">Solicitar Orçamento Similar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================
+         CTA
+         ======================================================================== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Gostou de Nosso Trabalho?</h2>
+            <p>Solicite um orçamento gratuito para seu projeto</p>
+            <a href="contato.html" class="btn btn-large">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         FOOTER
+         ======================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Películas Araujo</h4>
+                    <p>Especialista em películas de qualidade para veículos e imóveis.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="portfolio.html">Portfólio</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📧 Email: contato@peliculasaraujo.com</p>
+                    <p>📱 Telefone: (11) 9999-9999</p>
+                    <p>📍 São Paulo, SP</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Películas Araujo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================
+         SCRIPTS
+         ======================================================================== -->
+    <script src="assets/js/menu-mobile.js"></script>
+    <script src="assets/js/portfolio.js"></script>
+
+</body>
+</html>

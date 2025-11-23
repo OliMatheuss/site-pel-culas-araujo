@@ -1,0 +1,547 @@
+/**
+ * =====================================================================
+ * PORTFOLIO.CSS
+ * =====================================================================
+ * Estilos específicos para a página de portfólio
+ * Inclui: galeria, filtros, modal de detalhes, layout responsivo
+ */
+
+/* =====================================================================
+   FILTROS
+   ===================================================================== */
+
+.portfolio-filtros {
+    padding: var(--spacing-lg) 0;
+    background-color: white;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.portfolio-filtros h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+/**
+ * .filtros-container
+ * Container dos botões de filtro
+ * - Flexbox para alinhamento horizontal
+ * - Wrap para responsividade
+ */
+.filtros-container {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/**
+ * .filtro-btn
+ * Botões de filtro de categoria
+ * - Sem borda padrão
+ * - Transição suave
+ * - Estado ativo diferenciado
+ */
+.filtro-btn {
+    padding: 0.6rem 1.5rem;
+    background-color: white;
+    color: var(--color-text);
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/**
+ * .filtro-btn:hover
+ * Efeito ao passar o mouse
+ */
+.filtro-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/**
+ * .filtro-btn.active
+ * Botão de filtro ativo (selecionado)
+ */
+.filtro-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* =====================================================================
+   GALERIA
+   ===================================================================== */
+
+.portfolio-galeria {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-light);
+}
+
+/**
+ * Grid de projetos
+ * Responsivo: 1 coluna (mobile) → 3 colunas (desktop)
+ */
+.portfolio-galeria .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 600px) {
+    .portfolio-galeria .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .portfolio-galeria .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .portfolio-galeria .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/**
+ * .portfolio-item
+ * Container do projeto (card)
+ * - Transição suave
+ * - Efeito hover
+ * - Overflow hidden para arredondamento
+ */
+.portfolio-item {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * .portfolio-image
+ * Container da imagem do projeto
+ * - Posição relativa para overlay
+ * - Overflow hidden para transição suave
+ */
+.portfolio-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/**
+ * .portfolio-image img
+ * Imagem do projeto
+ * - 100% do container
+ * - Transição ao hover
+ */
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.1);
+}
+
+/**
+ * .portfolio-overlay
+ * Overlay sobre a imagem (escurecimento + botão)
+ * - Posição absoluta cobrindo a imagem
+ * - Opacity 0 por padrão, 1 ao hover
+ */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 152, 219, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/**
+ * .btn-portfolio-detalhes
+ * Botão "Ver Detalhes" no overlay
+ */
+.btn-portfolio-detalhes {
+    padding: 0.8rem 2rem;
+    background-color: white;
+    color: var(--color-primary);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-portfolio-detalhes:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/**
+ * .portfolio-info
+ * Informações do projeto (título, categoria, descrição)
+ */
+.portfolio-info {
+    padding: var(--spacing-md);
+}
+
+.portfolio-info h3 {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-info .descricao {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/**
+ * .categoria-badge
+ * Badge de categoria (Automotiva, Predial, Residencial)
+ */
+.categoria-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.categoria-badge.automotivo {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.categoria-badge.predial {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.categoria-badge.residencial {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+/* =====================================================================
+   MODAL DE DETALHES
+   ===================================================================== */
+
+/**
+ * .modal-portfolio
+ * Container do modal (fullscreen overlay)
+ * - Position fixed para cobrir tela inteira
+ * - Display none por padrão, inline-flex ao abrir
+ * - Backdrop escuro (rgba)
+ */
+.modal-portfolio {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-portfolio.ativo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/**
+ * .modal-content
+ * Card do modal com conteúdo
+ * - Background branco
+ * - Arredondado
+ * - Sombra profunda
+ * - Máximo 90vw de largura
+ */
+.modal-content {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 800px;
+    width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+}
+
+/**
+ * .modal-close
+ * Botão de fechar (X)
+ * - Posição absoluta no canto superior direito
+ * - Cursor pointer
+ */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    color: var(--color-primary);
+}
+
+/**
+ * .modal-body
+ * Conteúdo do modal
+ * - Grid 1 coluna (mobile) ou 2 colunas (desktop)
+ * - Padding interno
+ */
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+}
+
+@media (min-width: 600px) {
+    .modal-body {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/**
+ * .modal-image
+ * Imagem grande do projeto no modal
+ */
+.modal-image {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/**
+ * .modal-info
+ * Informações do projeto no modal
+ */
+.modal-info h2 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.modal-info p {
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/**
+ * .modal-detalhes
+ * Grid com detalhes específicos
+ * - Área, data, tipo película
+ */
+.modal-detalhes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+}
+
+.detalhe-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalhe-item strong {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.detalhe-item span {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/**
+ * .detalhes-completos
+ * Descrição completa do projeto
+ */
+.detalhes-completos {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: var(--spacing-md) 0;
+}
+
+/* =====================================================================
+   ANIMAÇÕES
+   ===================================================================== */
+
+/**
+ * fadeIn
+ * Animação de entrada do modal (backdrop)
+ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/**
+ * slideUp
+ * Animação de entrada do modal (conteúdo)
+ */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================================
+   RESPONSIVIDADE
+   ===================================================================== */
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+    .portfolio-filtros {
+        padding: var(--spacing-md) 0;
+    }
+
+    .filtros-container {
+        gap: 0.5rem;
+    }
+
+    .filtro-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .modal-body {
+        grid-template-columns: 1fr;
+        padding: var(--spacing-md);
+    }
+
+    .modal-image {
+        height: 250px;
+    }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    .portfolio-filtros {
+        padding: var(--spacing-md) 0;
+    }
+
+    .filtros-container {
+        gap: 0.3rem;
+    }
+
+    .filtro-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .portfolio-item {
+        border-radius: 0.5rem;
+    }
+
+    .portfolio-image {
+        height: 200px;
+    }
+
+    .portfolio-info {
+        padding: 0.75rem;
+    }
+
+    .portfolio-info h3 {
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        width: 95vw;
+        max-height: 95vh;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 1.8rem;
+    }
+
+    .modal-body {
+        padding: var(--spacing-md) 0.75rem;
+        gap: var(--spacing-md);
+    }
+
+    .modal-image {
+        height: 200px;
+    }
+
+    .modal-detalhes {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0.75rem;
+    }
+}
+
+/* =====================================================================
+   OCULTAR ITENS COM CLASSE hidden
+   ===================================================================== */
+
+.portfolio-item.hidden {
+    display: none;
+}
