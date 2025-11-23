@@ -1,0 +1,1 @@
+Pasta de testes — adicionar testes unitários aqui (ex: Jest, vitest).

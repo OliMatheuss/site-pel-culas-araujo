@@ -1,0 +1,5 @@
+/* Estilos base */
+:root{--bg:#ffffff;--fg:#222}
+*{box-sizing:border-box}
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;color:var(--fg);background:var(--bg);padding:1rem}
+header{border-bottom:1px solid #eee;padding-bottom:1rem;margin-bottom:1rem}
