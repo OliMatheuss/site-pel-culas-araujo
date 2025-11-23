@@ -1,1 +1,25 @@
-/* Arquivos de estilo fonte (para o pipeline), atualmente vazio */
+/**
+ * @fileoverview Estilos de desenvolvimento - fonte para build
+ * 
+ * Este arquivo serve como fonte para processamento via bundler (Webpack, Vite, etc).
+ * Em um projeto com build configurado, este seria compilado em public/assets/css/main.css
+ * 
+ * Atualmente vazio, pronto para receber estilos organizados com estrutura modular.
+ * 
+ * Estrutura sugerida:
+ * 1. Variáveis CSS (cores, tipografia)
+ * 2. Reset/Normalize
+ * 3. Utilidades
+ * 4. Componentes
+ * 5. Layouts
+ * 
+ * @author Equipe Películas Araujo
+ * @version 1.0.0
+ * @date 2025
+ */
+
+/* Importe arquivos CSS modulares se estiver usando um bundler:
+@import './variables.css';
+@import './base.css';
+@import './components.css';
+*/

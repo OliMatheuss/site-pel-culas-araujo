@@ -1,0 +1,24 @@
+# Diretório de Logs
+
+Este diretório armazena arquivos de log da aplicação.
+
+## Tipos de Logs
+
+- `app.log` - Log geral da aplicação
+- `error.log` - Erros da aplicação
+- `access.log` - Requisições HTTP (quando em servidor)
+
+## Uso
+
+Os logs são gerados automaticamente quando a aplicação está rodando.
+
+Para visualizar:
+
+```bash
+tail -f logs/app.log
+tail -f logs/error.log
+```
+
+## Rotação
+
+Em produção, usar logrotate ou similar para gerenciar o tamanho dos arquivos de log.

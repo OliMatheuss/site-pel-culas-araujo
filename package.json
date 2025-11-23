@@ -1,13 +1,34 @@
 {
   "name": "site-peliculas-araujo",
   "version": "0.1.0",
-  "description": "Base do site Películas Araujo",
+  "description": "Site profissional para Películas Araujo - especialista em películas automotivas e prediais",
+  "author": "Equipe Películas Araujo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/site-peliculas-araujo.git"
+  },
+  "keywords": [
+    "películas",
+    "insulfilm",
+    "automotivo",
+    "predial",
+    "proteção-solar"
+  ],
   "scripts": {
     "start": "npx serve public",
     "serve": "npx serve public",
     "build": "echo \"No build step configured\"",
     "backend:install": "python -m venv backend/.venv && backend/.venv\\Scripts\\pip install -r backend/requirements.txt",
-    "backend:start": "python backend/run.py"
+    "backend:start": "python backend/run.py",
+    "backend:dev": "FLASK_ENV=development python backend/run.py",
+    "test": "echo \"No test step configured yet\""
   },
-  "license": "MIT"
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
 }
+

@@ -1,5 +1,56 @@
-/* Estilos base */
-:root{--bg:#ffffff;--fg:#222}
-*{box-sizing:border-box}
-body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;color:var(--fg);background:var(--bg);padding:1rem}
-header{border-bottom:1px solid #eee;padding-bottom:1rem;margin-bottom:1rem}
+/**
+ * @fileoverview Estilos principais da aplicação - Películas Araujo
+ * 
+ * Este arquivo contém os estilos globais e componentes base da aplicação.
+ * Utiliza variáveis CSS (Custom Properties) para fácil customização de temas.
+ * 
+ * Cores e Temas:
+ * - --bg: Cor de fundo principal (padrão: branco)
+ * - --fg: Cor do texto principal (padrão: cinza escuro)
+ * 
+ * @author Equipe Películas Araujo
+ * @version 1.0.0
+ * @date 2025
+ */
+
+/**
+ * Variáveis CSS (Custom Properties)
+ * Permitem mudança rápida de tema sem alterar o código
+ * Todos os elementos herdam essas cores a menos que sobrescrito
+ */
+:root {
+    --bg: #ffffff;      /* Cor de fundo da página */
+    --fg: #222;         /* Cor do texto */
+}
+
+/**
+ * Reset global de box-sizing
+ * border-box inclui padding e border no cálculo da largura/altura
+ * Facilita o layout e evita transbordamentos inesperados
+ */
+* {
+    box-sizing: border-box;
+}
+
+/**
+ * Estilos globais do body
+ * Define tipografia base, margens e cores padrão
+ */
+body {
+    /* Stack de fontes: lista de fallback em caso de fonte não estar disponível */
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    margin: 0;                          /* Remove margem padrão do navegador */
+    color: var(--fg);                   /* Usa cor do texto da variável */
+    background: var(--bg);              /* Usa cor de fundo da variável */
+    padding: 1rem;                      /* Espaço interno do body */
+}
+
+/**
+ * Estilos do header (cabeçalho)
+ * Fornece separação visual do conteúdo principal
+ */
+header {
+    border-bottom: 1px solid #eee;      /* Linha divisória cinza clara */
+    padding-bottom: 1rem;               /* Espaço interno inferior */
+    margin-bottom: 1rem;                /* Espaço externo inferior */
+}
